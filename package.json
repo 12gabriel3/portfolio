@@ -6,7 +6,8 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore ."
+    "lint": "eslint --ext .js,.vue,.ts --ignore-path .gitignore .",
+    "deploy": "nuxt generate && firebase deploy"
   },
   "devDependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
@@ -18,10 +19,15 @@
     "eslint-plugin-nuxt": "^4.0.0",
     "eslint-plugin-vue": "latest",
     "nuxt": "3.0.0",
-    "prettier": "^2.7.1"
+    "prettier": "^2.7.1",
+    "typescript": "^4.9.3"
   },
   "dependencies": {
+    "@nuxtjs/firebase": "^8.2.2",
     "@nuxtjs/i18n": "next",
-    "npm": "^9.1.1"
+    "devicon": "^2.15.1",
+    "npm": "^9.1.1",
+    "typewriter-vue": "^0.5.19",
+    "vue-typed-js": "^0.1.2"
   }
 }
