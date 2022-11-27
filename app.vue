@@ -1,38 +1,35 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { useTheme } from "vuetify";
+const mq = window.matchMedia("(prefers-color-scheme: dark)");
+
+const theme = useTheme();
+theme.global.name.value = mq.matches ? "dark" : "light";
+mq.addEventListener("change", (e) => {
+  theme.global.name.value = e.matches ? "dark" : "light";
+});
+</script>
 
 <template>
-  <div class="root">
+  <v-app>
     <SiteHeader />
     <NuxtPage />
-  </div>
+    <v-footer>
+      <p>{{ $t("copyright") }}</p>
+    </v-footer>
+  </v-app>
 </template>
 
 <style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap');
-@import url('https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css');
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css");
 body {
-  margin: 0;
-  padding: 0;
   font-family: "Hack", sans-serif;
-  background-color: #0d1b2a;
 }
-.root {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-  overflow: hidden;
+.v-footer {
+  flex: 0 1 auto;
 }
-h1 {
-  font-size: 3rem;
-  font-weight: bold;
-  color: #e0e1dd;
-  user-select: none;
-}
-p {
-  font-size: 1.5rem;
-  color: #e0e1dd;
-  user-select: none;
+.v-footer p {
+  text-align: center;
+  width: 100%;
 }
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <div class="fakeTerminal">
+  <div class="wrapper">
     <div class=fakeMenu>
       <div class="fakeButtons fakeClose"></div>
       <div class="fakeButtons fakeMinimize"></div>
@@ -11,9 +11,9 @@
   </div>
 </template>
 <style scoped>
-.fakeTerminal {
-  width: 600px;
+.wrapper {
   height: 400px;
+  width: 600px;
 }
 .fakeButtons {
   height: 11px;
@@ -40,7 +40,7 @@
 }
 
 .fakeMenu {
-  width: 550px;
+  width: 100%;
   box-sizing: border-box;
   height: 25px;
   background-color: #bbb;
@@ -50,13 +50,14 @@
 }
 
 .fakeScreen {
-  background-color: #151515;
+  background-color: #272728;
   box-sizing: border-box;
-  width: 550px;
-  height: 375px;
+  width: 100%;
+  height: 100%;
   margin: 0 auto;
   padding: 20px;
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
+  backdrop-filter: blur(5px);
 }
 </style>
