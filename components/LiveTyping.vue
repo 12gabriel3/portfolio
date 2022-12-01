@@ -27,23 +27,24 @@ type();
 </script>
 
 <template>
-  <span class="folderName">~</span><br>
-  <span class="text"
-    ><span class="prompt">❯</span> {{ text }}
-    <div class="cursor"
-  /></span>
+  <span class="folderName">~</span>
+  <br />
+  <span class="text">
+    <span class="prompt">❯</span>
+    {{ text }}
+    <div class="cursor" />
+  </span>
 </template>
 
 <style scoped>
-
 .cursor {
   position: relative;
+  height: min(1.5rem, 4vw);
   width: 3px;
-  height: 1.5rem;
   background-color: #fff;
   animation: blink 1s infinite;
   display: inline-block;
-  top: 0.3rem;
+  top: min(0.3rem, 0.75vw);
 }
 @keyframes blink {
   0% {
@@ -60,15 +61,20 @@ type();
   color: #1adf13;
   font-weight: bold;
   display: inline-block;
+  font-size: min(1.5rem, 4vw);
+  margin: 0;
 }
 .folderName {
   color: #13acdf;
+  font-size: min(1.5rem, 4vw);
   font-weight: bold;
   display: inline-block;
+  margin: 0;
   margin-right: 5px;
 }
 .text {
-  font-size: 1.5rem;
+  font-size: min(1.5rem, 4vw);
   color: #e0e1dd;
+  margin: 0;
 }
 </style>

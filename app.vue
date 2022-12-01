@@ -13,15 +13,14 @@ mq.addEventListener("change", (e) => {
   <v-app>
     <SiteHeader />
     <NuxtPage />
-    <v-footer>
-      <p>{{ $t("copyright") }}</p>
+    <v-footer class="mt-10">
+      <p :innerHTML="$t('copyright')" class="text-caption" />
     </v-footer>
   </v-app>
 </template>
 
 <style>
 @import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@600&display=swap");
-@import url("https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css");
 body {
   font-family: "Hack", sans-serif;
 }
@@ -31,5 +30,33 @@ body {
 .v-footer p {
   text-align: center;
   width: 100%;
+}
+
+.v-footer p a {
+  outline: none;
+  text-decoration: none;
+  padding: 2px 1px 0;
+}
+.v-footer p a:link {
+  color: rgb(var(--v-theme-info));
+}
+
+.v-footer p a:visited {
+  color: rgba(var(--v-theme-info), 0.5);
+}
+
+.v-footer p a:focus {
+  border-bottom: 1px solid;
+  background: rgba(var(--v-theme-info), 0.5);
+}
+
+.v-footer p a:hover {
+  border-bottom: 1px solid;
+  background: rgba(var(--v-theme-info), 0.2);
+}
+
+.v-footer p a:active {
+  background: rgb(var(--v-theme-info));
+  color: rgba(var(--v-theme-info), 0.2);
 }
 </style>

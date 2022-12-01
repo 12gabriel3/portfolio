@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "keywords":
+      "Gabriel Aguiar, web developer, embedded developer, developer, web, embedded, programmer, programming, web programming, embedded programming, game programming, game development, web development, embedded development, app development, web app development, mobile app development, desktop app development",
+    "titleIndex": "Web and Embedded Developer",
+    "descriptionIndex":
+      "Personal webpage of Gabriel Aguiar, embedded and web developer.",
+    "titleCreations": "Creations",
+    "descriptionCreations": 
+      "Personal webpage of Gabriel Aguiar, embedded and web developer. Creations page.",
+    "titleContact": "Contact",
+    "descriptionContact":
+      "Personal webpage of Gabriel Aguiar, embedded and web developer. Contact page.",
+    "titleBlog": "Blog",
+    "descriptionBlog":
+      "Personal webpage of Gabriel Aguiar, embedded and web developer. Blog page."
+  },
+  "home": "Home",
+  "contact": "Contact",
+  "creations": "My Creations",
+  "blog": "Blog",
+  "lightTheme": "Light Theme",
+  "darkTheme": "Dark Theme",
+  "translate": "Traduzir para o Português",
+
+  "title":
+    "Hi, I'm Gabriel. A web developer <span class='text-grey'>based in Brazil.</span>",
+  "about": "About me",
+  "aboutText": "I'm a restless mind, always looking for something to learn. I like when other people use my creations. When I want to make something, I'm not intimidated if I need to learn new things. Quite the contrary. I'm moved by challenges.",
+  "myJourney": "My Journey",
+  "myJourneyText":
+    "I started my journey in the world of programming in 2012, when I learned C to program embedded devices. I soon fell in love with programming, studying it always more.  Still with the embedded perspective, I learned C++ and Python. With programming ever more present in my life, I decided to explore areas still unknown to me. I always liked to learn the most recent technologies. Wanting to create more modern applications, I learned HTML, CSS and JavaScript. Since I love creating apps that are used by others, I used my knowledge to create a third party tool for a game I used to play. I also modded another game. Having to learn a new programming language and 3D modelling, something I was completely new to, was a challenge for me, which is what drove me forward. Finally, after many projects, I decided to turn this hobby into my career, making this website and accepting jobs.",
+  "useLatestTech": "I use the latest technologies.",
+
+  "welcome": "Welcome to my website!",
+  "myName": "I'm Gabriel Aguiar and I'm a developer.",
+  "ilike": "I like to code.",
+
+  "getInTouch": "Get in touch",
+  "contactText": "Want to get in touch? Fill out the form below.",
+  "name": "Name",
+  "nameRequired": "Name is required",
+  "nameTooLong": "Name is too long",
+  "message": "Message",
+  "messageRequired": "Message is required",
+  "messageTooLong": "Message is too long",
+  "send": "Send",
+  "emailRequired": "Email is required",
+  "emailInvalid": "Enter a valid email",
+  "emailSent": "Email sent!",
+  "emailSentText":
+    "Thank you for getting in touch! I will reply as soon as possible.",
+  "emailNotSent":
+    "There was an internal error. Please try agin later.",
+
+  "copyright": "© 2022 Gabriel Aguiar - This site is protected by reCAPTCHA and the Google <a href='https://policies.google.com/privacy' target='blank'>Privacy Policy</a> and <a href='https://policies.google.com/terms' target='blank'>Terms of Service</a> apply."
+}

@@ -1,40 +1,83 @@
 <template>
   <v-main>
     <v-container class="main">
-      <h1 class="title" v-html="$t('title')"></h1>
-      <v-spacer></v-spacer>
+      <h1
+        class="text-h5 text-md-h2 text-center py-10"
+        v-html="$t('title')"
+      ></h1>
       <v-container class="landing">
-        <v-avatar class="avatar" image="img/me.png" size="400" variant="outlined" />
+        <v-avatar class="avatar" variant="outlined" color="info">
+          <v-img src="/img/avatar.webp" />
+        </v-avatar>
         <FakeTerminal class="terminal" />
       </v-container>
-      <h1>{{ $t("about") }}</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+      <h1 class="text-h5 text-md-h2 text-center pt-10 pb-3">{{ $t("about") }}</h1>
+      <p class="text-justify">{{ $t("aboutText") }}</p>
+      <h1 class="text-h5 text-md-h2 text-center pt-10 pb-3">
+        {{ $t("useLatestTech") }}
+      </h1>
+      <KnownTech></KnownTech>
+      <h1 class="text-h5 text-md-h2 text-center pt-10 pb-3">
+        {{ $t("myJourney") }}
+      </h1>
+      <p class="text-justify">{{ $t("myJourneyText") }}</p>
     </v-container>
   </v-main>
 </template>
+<script setup>
+const { t } = useI18n();
+const localePath = useLocalePath();
+useHead({
+  title: t("meta.titleIndex"),
+  meta: [
+    {
+      name: "description",
+      content: t("meta.descriptionIndex"),
+    },
+    {
+      name: "keywords",
+      content: t("meta.keywords"),
+    },
+    {
+      name: "author",
+      content: "Gabriel Aguiar",
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://gabriel-aguiar.dev${localePath({ name: "index" })}`,
+    },
+  ],
+});
+</script>
 
 <style scoped>
 .main {
-  display: flex;
-  flex-direction: column;
-  align-content: center;
+  display: block;
   align-items: center;
   justify-content: center;
-  width: 50%;
+  width: min(100%, 1000px);
 }
 .terminal {
   position: absolute;
   top: 30%;
   left: 30%;
+  height: min(400px, 60%);
+  width: min(600px, 70%);
 }
 .landing {
   position: relative;
-  width: 1000px;
-  height: 700px;
+  width: min(1000px, 100%);
+  height: auto;
+  aspect-ratio: 1000 / 700;
 }
 .avatar {
   top: 0;
   left: 0;
+  height: auto;
+  width: 50%;
+  aspect-ratio: 1;
   background-color: rgb(var(--v-theme-info));
 }
 </style>

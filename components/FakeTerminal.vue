@@ -16,17 +16,17 @@
   width: 600px;
 }
 .fakeButtons {
-  height: 11px;
-  width: 11px;
+  height: 50%;
+  width: auto;
+  aspect-ratio: 1;
   border-radius: 50%;
-  position: relative;
-  margin-left: 5px;
-  margin-right: 5px;
-  margin-top: 7px;
+  margin-left: 2%;
+  margin-top: 1%;
   border: 1px solid;
   background-color: #ff5f58;
   border-color: #e24740;
   display: inline-block;
+  vertical-align: top;
 }
 
 .fakeMinimize {
@@ -42,7 +42,7 @@
 .fakeMenu {
   width: 100%;
   box-sizing: border-box;
-  height: 25px;
+  height: 7%;
   background-color: #bbb;
   margin: 0 auto;
   border-top-right-radius: 5px;
@@ -55,9 +55,8 @@
   width: 100%;
   height: 100%;
   margin: 0 auto;
-  padding: 20px;
+  padding: min(1rem, 1.5vw);
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
-  backdrop-filter: blur(5px);
 }
 </style>

@@ -1,11 +1,14 @@
 <template>
   <v-main class="contact-main">
-    <v-spacer></v-spacer>
     <v-slide-x-transition leave-absolute>
       <v-container class="contact-main" v-if="!emailSent">
         <h1>{{ $t("getInTouch") }}</h1>
         <p>{{ $t("contactText") }}</p>
-        <v-form id="message-form" @submit.prevent="onSubmitForm">
+        <v-form
+          @submit.prevent="onSubmit"
+          id="message-form"
+          v-model="formValid"
+        >
           <v-text-field
             v-model="name"
             :rules="nameRules"
@@ -28,13 +31,17 @@
             no-resize
             auto-grow
           />
-          <v-btn
-            type="submit"
-            class="g-recaptcha"
-            data-sitekey="6LeG-zgjAAAAAO-tz4eBkvwfIB3_GPeGCmAWOEyA"
-            data-callback="onSubmit"
-            data-action="submit"
-          >
+          <ClientOnly>
+            <VueRecaptcha
+              ref="recaptcha"
+              sitekey="6LdOfj8jAAAAANg1dkmOe5x5OmLA54OB7_3i-XrF"
+              type="submit"
+              size="invisible"
+              @verify="sendEmail"
+              loadRecaptchaScript
+            />
+          </ClientOnly>
+          <v-btn type="submit">
             {{ $t("send") }}
           </v-btn>
         </v-form>
@@ -47,18 +54,19 @@
         <p>{{ $t("emailSentText") }}</p>
       </v-container>
     </v-slide-x-reverse-transition>
-    <v-spacer></v-spacer>
   </v-main>
 </template>
 
 <script setup lang="ts">
-import { SubmitEventPromise } from "vuetify/lib/framework.mjs";
 const { t } = useI18n();
+const localePath = useLocalePath();
 const name = ref("");
 const email = ref("");
 const message = ref("");
+const formValid = ref(false);
 const emailSent = ref(false);
 const error = ref(false);
+const recaptcha = ref();
 const nameRules = [
   (v: string) => !!v || t("nameRequired"),
   (v: string) => (v && v.length <= 50) || t("nameTooLong"),
@@ -71,37 +79,55 @@ const messageRules = [
   (v: string) => !!v || t("messageRequired"),
   (v: string) => (v && v.length <= 500) || t("messageTooLong"),
 ];
-
-function onSubmit(token) {
-  (document.getElementById("message-form") as HTMLFormElement)?.submit();
+useHead({
+  title: t("meta.titleContact"),
+  meta: [
+    {
+      name: "description",
+      content: t("meta.descriptionContact"),
+    },
+    {
+      name: "keywords",
+      content: t("meta.keywords"),
+    },
+    {
+      name: "author",
+      content: "Gabriel Aguiar",
+    },
+  ],
+  link: [
+    {
+      rel: "canonical",
+      href: `https://gabriel-aguiar.dev${localePath({ name: "contact" })}`,
+    },
+  ],
+});
+function onSubmit() {
+  if (formValid.value) recaptcha.value.execute();
 }
-function onSubmitForm(event: SubmitEventPromise) {
-  event.then((data) => {
-    if (data.valid) sendEmail();
-  });
-}
-function sendEmail() {
-  emailjs
-    .sendForm(
+async function sendEmail() {
+  try {
+    const response = await emailjs.sendForm(
       "service_ltjr94u",
       "template_lpa0xyt",
       "#message-form",
       "O_PVolcySG0OqGQD4"
-    )
-    .then(
-      function (response) {
-        emailSent.value = true;
-        name.value = "";
-        email.value = "";
-        message.value = "";
-      },
-      function (error) {
-        error.value = true;
-      }
     );
+    if (response.status !== 200) throw new Error();
+    emailSent.value = true;
+    name.value = "";
+    email.value = "";
+    message.value = "";
+  } catch (e) {
+    error.value = true;
+  }
 }
 </script>
-
+<style>
+.grecaptcha-badge {
+  visibility: hidden;
+}
+</style>
 <style scoped>
 .v-spacer {
   flex: 1 1 100%;

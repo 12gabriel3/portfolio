@@ -1,0 +1,57 @@
+{
+  "meta": {
+    "titleIndex": "Desenvolvedor Web e Embarcado",
+    "descriptionIndex":
+      "Página pessoal de Gabriel Aguiar, desenvolvedor web e embarcado.",
+    "keywords":
+      "Gabriel Aguiar, desenvolvedor web, desenvolvedor embarcado, desenvolvedor, web, embedded, programador, programação, programação web, programação embarcada, programação de jogos, desenvolvimento de jogos, desenvolvimento web, desenvolvimento embarcado, desenvolvimento de aplicativos, desenvolvimento de aplicativos web, desenvolvimento de aplicativos móveis, desenvolvimento de aplicativos desktop",
+    "titleCreations": "Criações",
+    "descriptionCreations":
+      "Página pessoal de Gabriel Aguiar, desenvolvedor web e embarcado. Página de criações.",
+    "titleContact": "Contato",
+    "descriptionContact":
+      "Página pessoal de Gabriel Aguiar, desenvolvedor web e embarcado. Página de contato.",
+    "titleBlog": "Blog",
+    "descriptionBlog":
+      "Página pessoal de Gabriel Aguiar, desenvolvedor web e embarcado. Página de blog.",
+  },
+  "home": "Início",
+  "contact": "Contato",
+  "creations": "Minhas Criações",
+  "blog": "Blog",
+  "lightTheme": "Tema Claro",
+  "darkTheme": "Tema Escuro",
+  "translate": "Translate to English",
+
+  "title": "Olá, eu sou o Gabriel. Um desenvolvedor web.",
+  "about": "Sobre mim",
+  "aboutText": "Sou uma mente inquieta, sempre procurando algo novo para aprender. Gosto que outras pessoas utlizem minhas criações. Quando quero criar algo, não me intimido por ter de aprender algo novo. Muito pelo contrário. Desafios me movem.",
+  "myJourney": "Minha Trajetória",
+  "myJourneyText":
+    "Comecei meu contato com a programação em 2012, quando aprendi C para programar sistemas embarcados. Logo me apaixonei pela programação e comecei a estudar mais sobre o assunto. Foi então que aprendi C++ e python, ainda com a perspectiva de sistemas embarcados. Com a programação cada vez mais presente em minha vida, resolvi explorar áreas que até então desconhecia. Sempre gostei de aprender coisas novas e estar sempre atualizado. Com o desejo de criar programas mais modernos, aprendi HTML, CSS e JavaScript. Como gosto de criar programas que possam ser usados por outras pessoas, usei meu conhecimento para criar uma ferramenta para um jogo que eu jogava. Também criei um mod para outro jogo. Ter que aprender uma nova linguagem de programação específica e modelagem 3D, algo que desconhecia completamente, era um desafio para mim, o que me motivou a continuar. Por fim, entre projetos, resolvi tornar esse hobby em algo profissional, criando esse site e me disponibilizando para trabalhos.",
+  "useLatestTech": "Utilizo as tecnologias mais recentes.",
+
+  "welcome": "Bem-vindo ao meu site!",
+  "myName": "Eu sou Gabriel Aguiar e sou um programador.",
+  "ilike": "Eu gosto de programar.",
+
+  "getInTouch": "Entre em contato",
+  "contactText":
+    "Quer entrar em contato? Preencha o formulário abaixo.",
+  "name": "Nome",
+  "nameRequired": "Nome é obrigatório",
+  "nameTooLong": "Nome é muito longo",
+  "message": "Mensagem",
+  "messageRequired": "Mensagem é obrigatória",
+  "messageTooLong": "Mensagem é muito longa",
+  "emailRequired": "Email é obrigatório",
+  "emailInvalid": "Digite um email válido",
+  "send": "Enviar",
+  "emailSent": "Email enviado com sucesso!",
+  "emailSentText":
+    "Obrigado por entrar em contato! Vou responder seu email o mais rápido possível.",
+  "emailNotSent":
+    "Houve um erro interno. Por favor, tente novamente mais tarde.",
+
+  "copyright": "© 2022 Gabriel Aguiar - Este site é protegido pelo reCAPTCHA e a <a href='https://policies.google.com/privacy' target='blank'>Política de Privacidade</a> e <a href='https://policies.google.com/terms' target='blank'>Termos de Serviço</a> do Google se aplicam."
+}
